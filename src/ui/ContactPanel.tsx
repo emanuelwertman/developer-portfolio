@@ -13,7 +13,12 @@ export function ContactPanel({ active }: { active: boolean }) {
       <ul className="contact-links">
         {socials.map((s) => (
           <li key={s.label}>
-            <a href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer noopener">
+            <a
+              href={s.href}
+              download={s.download || undefined}
+              target={s.download || s.href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noreferrer noopener"
+            >
               <span className="contact-links__label">{s.label}</span>
               <span className="contact-links__handle">{s.handle}</span>
               <span className="contact-links__arrow" aria-hidden>

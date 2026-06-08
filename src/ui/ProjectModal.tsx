@@ -44,6 +44,25 @@ export function ProjectModal() {
           <p className="modal__blurb">{p.blurb}</p>
           <p className="modal__desc">{p.description}</p>
 
+          <section className="modal__section">
+            <h3 className="modal__label">The Problem</h3>
+            <p className="modal__section-body">{p.problem}</p>
+          </section>
+
+          <section className="modal__section">
+            <h3 className="modal__label">Tech Stack</h3>
+            <ul className="modal__stack">
+              {p.techStack.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="modal__section">
+            <h3 className="modal__label">What I Learned</h3>
+            <p className="modal__section-body">{p.reflection}</p>
+          </section>
+
           <ul className="modal__tags">
             {p.tags.map((t) => (
               <li key={t}>{t}</li>
